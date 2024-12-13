@@ -18,9 +18,9 @@ public class EnemyController : MonoBehaviour
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider  other)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Arrow"))
+        if (other.CompareTag("Arrow"))
         {
             audioSource.PlayOneShot(hitSound);
             scoreManager.AddScore(scoreValue);

@@ -576,19 +576,19 @@ MonoBehaviour:
   RecoilForce: 1
   AimZoomRatio: 1
   AimOffset: {x: 0, y: 0, z: 0}
-  AutomaticReload: 1
+  AutomaticReload: 0
   HasPhysicalBullets: 0
-  ClipSize: 10
+  ClipSize: 0
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
   AmmoReloadRate: 1
   AmmoReloadDelay: 0
-  MaxAmmo: 20
+  MaxAmmo: 10
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 1
-  AmmoUsedOnStartCharge: 1
+  AmmoUsedOnStartCharge: 0
   AmmoUsageRateWhileCharging: 1
   WeaponAnimator: {fileID: 0}
   MuzzleFlashPrefab: {fileID: 7655095426451682942, guid: a7d68b1a502e02a49b8efb1b86a8c931, type: 3}
@@ -599,6 +599,8 @@ MonoBehaviour:
   ContinuousShootStartSfx: {fileID: 0}
   ContinuousShootLoopSfx: {fileID: 0}
   ContinuousShootEndSfx: {fileID: 0}
+  m_CarriedPhysicalBullets: 0
+  m_CurrentAmmo: 0
 --- !u!114 &-7923757940149091841
 MonoBehaviour:
   m_ObjectHideFlags: 0

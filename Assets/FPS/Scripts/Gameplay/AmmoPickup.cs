@@ -19,7 +19,8 @@ namespace Unity.FPS.Gameplay
                 WeaponController weapon = playerWeaponsManager.HasWeapon(Weapon);
                 if (weapon != null)
                 {
-                    weapon.AddCarriablePhysicalBullets(BulletCount);
+                    // weapon.AddCarriablePhysicalBullets(BulletCount);
+                    weapon.AddCarriablePhysicalBullets(0);
 
                     AmmoPickupEvent evt = Events.AmmoPickupEvent;
                     evt.Weapon = weapon;

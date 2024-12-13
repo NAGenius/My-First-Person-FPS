@@ -133,8 +133,8 @@ namespace Unity.FPS.Game
         public UnityAction OnShoot;
         public event Action OnShootProcessed;
 
-        int m_CarriedPhysicalBullets;
-        float m_CurrentAmmo;
+        public int m_CarriedPhysicalBullets;
+        public float m_CurrentAmmo;
         float m_LastTimeShot = Mathf.NegativeInfinity;
         public float LastChargeTriggerTimestamp { get; private set; }
         Vector3 m_LastMuzzlePosition;
@@ -157,7 +157,7 @@ namespace Unity.FPS.Game
 
         AudioSource m_ShootAudioSource;
 
-        public bool IsReloading { get; private set; }
+        public bool IsReloading { get; set; }
 
         const string k_AnimAttackParameter = "Attack";
 
@@ -165,8 +165,10 @@ namespace Unity.FPS.Game
 
         void Awake()
         {
-            m_CurrentAmmo = MaxAmmo;
-            m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
+            // m_CurrentAmmo = MaxAmmo;
+            m_CurrentAmmo = 0;
+            // m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
+            m_CarriedPhysicalBullets = ClipSize;
             m_LastMuzzlePosition = WeaponMuzzle.position;
 
             m_ShootAudioSource = GetComponent<AudioSource>();
