@@ -9,8 +9,8 @@ public class ShootingSpotTrigger : MonoBehaviour
         if (weaponController == null) weaponController = GameObject.FindObjectOfType<WeaponController>();
         if (other.CompareTag("Player"))
         {
-            weaponController.m_CarriedPhysicalBullets = 20;
-            weaponController.m_CurrentAmmo = 20;
+            // weaponController.m_CarriedPhysicalBullets = 20;
+            weaponController.m_CurrentAmmo = weaponController.MaxAmmo;
         }
     }
 
@@ -19,7 +19,7 @@ public class ShootingSpotTrigger : MonoBehaviour
         if (weaponController == null) weaponController = GameObject.FindObjectOfType<WeaponController>();
         if (other.CompareTag("Player"))
         {
-            weaponController.m_CarriedPhysicalBullets = 0;
+            // weaponController.m_CarriedPhysicalBullets = 0;
             weaponController.m_CurrentAmmo = 0;
         }
     }

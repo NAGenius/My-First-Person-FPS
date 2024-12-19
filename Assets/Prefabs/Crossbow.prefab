@@ -437,7 +437,7 @@ Animator:
   m_GameObject: {fileID: 4318839391344672915}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6acf054716d60f742ae37b99b2859ac4, type: 3}
-  m_Controller: {fileID: 9100000, guid: 48491b34c7bdf2b4f974944b3b7ca8e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb4defe13683d2047ba331afc55fa295, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -568,8 +568,8 @@ MonoBehaviour:
     CrosshairColor: {r: 1, g: 0, b: 0, a: 1}
   WeaponRoot: {fileID: 2456916829737072179}
   WeaponMuzzle: {fileID: 3409509773941335987}
-  ShootType: 2
-  ProjectilePrefab: {fileID: 6913549393945516091, guid: 0c4e8112bfcc61c438da04a986eed8a3, type: 3}
+  ShootType: 0
+  ProjectilePrefab: {fileID: 2110776619578244865, guid: 0c4e8112bfcc61c438da04a986eed8a3, type: 3}
   DelayBetweenShots: 0.5
   BulletSpreadAngle: 0
   BulletsPerShot: 1
@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3210714624a70b842b10702f9ca31178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxChargeTime: 0.5
   shootStartSound: {fileID: 8300000, guid: aedc4b9196609c642a6eea86a8ad508a, type: 3}
   shootEndSound: {fileID: 8300000, guid: a9570a2a6cb3f574bb930d03de35db82, type: 3}
 --- !u!1 &4791187403354905165

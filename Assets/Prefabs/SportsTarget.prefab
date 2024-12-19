@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2575902191970741417}
   - component: {fileID: 6241653736773310580}
   - component: {fileID: 2859973384607563608}
-  - component: {fileID: 6367185545220208003}
   - component: {fileID: 7178028248655342013}
+  - component: {fileID: 5140042922732938538}
   m_Layer: 7
   m_Name: SportsTarget
   m_TagString: Untagged
@@ -109,20 +109,6 @@ CapsuleCollider:
   m_Height: 50.000015
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 2.3716942e-20, z: -0.00000011920929}
---- !u!114 &6367185545220208003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8874299735968546166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462d63bfb52036749b3752a9f5279d32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSound: {fileID: 8300000, guid: 60cc58f68bd8b16489537daded3fc49f, type: 3}
-  scoreValue: 10
 --- !u!95 &7178028248655342013
 Animator:
   serializedVersion: 5
@@ -144,3 +130,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5140042922732938538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8874299735968546166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddc02ae52d49f347b2e1e445751ff8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 20
+  hitSound: {fileID: 8300000, guid: 60cc58f68bd8b16489537daded3fc49f, type: 3}

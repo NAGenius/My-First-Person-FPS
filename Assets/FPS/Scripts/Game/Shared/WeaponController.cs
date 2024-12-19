@@ -28,7 +28,8 @@ namespace Unity.FPS.Game
     [RequireComponent(typeof(AudioSource))]
     public class WeaponController : MonoBehaviour
     {
-        [Header("Information")] [Tooltip("The name that will be displayed in the UI for this weapon")]
+        [Header("Information")]
+        [Tooltip("The name that will be displayed in the UI for this weapon")]
         public string WeaponName;
 
         [Tooltip("The image that will be displayed in the UI for this weapon")]
@@ -47,7 +48,8 @@ namespace Unity.FPS.Game
         [Tooltip("Tip of the weapon, where the projectiles are shot")]
         public Transform WeaponMuzzle;
 
-        [Header("Shoot Parameters")] [Tooltip("The type of weapon wil affect how it shoots")]
+        [Header("Shoot Parameters")]
+        [Tooltip("The type of weapon wil affect how it shoots")]
         public WeaponShootType ShootType;
 
         [Tooltip("The projectile prefab")] public ProjectileBase ProjectilePrefab;
@@ -61,10 +63,12 @@ namespace Unity.FPS.Game
         [Tooltip("Amount of bullets per shot")]
         public int BulletsPerShot = 1;
 
-        [Tooltip("Force that will push back the weapon after each shot")] [Range(0f, 2f)]
+        [Tooltip("Force that will push back the weapon after each shot")]
+        [Range(0f, 2f)]
         public float RecoilForce = 1;
 
-        [Tooltip("Ratio of the default FOV that this weapon applies while aiming")] [Range(0f, 1f)]
+        [Tooltip("Ratio of the default FOV that this weapon applies while aiming")]
+        [Range(0f, 1f)]
         public float AimZoomRatio = 1f;
 
         [Tooltip("Translation to apply to weapon arm when aiming with this weapon")]
@@ -107,7 +111,7 @@ namespace Unity.FPS.Game
         [Tooltip("Additional ammo used when charge reaches its maximum")]
         public float AmmoUsageRateWhileCharging = 1f;
 
-        [Header("Audio & Visual")] 
+        [Header("Audio & Visual")]
         [Tooltip("Optional weapon animator for OnShoot animations")]
         public Animator WeaponAnimator;
 
@@ -162,12 +166,14 @@ namespace Unity.FPS.Game
         const string k_AnimAttackParameter = "Attack";
 
         private Queue<Rigidbody> m_PhysicalAmmoPool;
+        private GameObject arrow;
+        public bool isReadyToShoot = false;
 
         void Awake()
         {
             // m_CurrentAmmo = MaxAmmo;
             m_CurrentAmmo = 0;
-            // m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
+            m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
             m_CarriedPhysicalBullets = ClipSize;
             m_LastMuzzlePosition = WeaponMuzzle.position;
 
@@ -196,6 +202,7 @@ namespace Unity.FPS.Game
                     m_PhysicalAmmoPool.Enqueue(shell.GetComponent<Rigidbody>());
                 }
             }
+            arrow = transform.Find("GunRoot/箭")?.gameObject;
         }
 
         public void AddCarriablePhysicalBullets(int count) => m_CarriedPhysicalBullets = Mathf.Max(m_CarriedPhysicalBullets + count, MaxAmmo);
@@ -241,11 +248,24 @@ namespace Unity.FPS.Game
             UpdateAmmo();
             UpdateCharge();
             UpdateContinuousShootSound();
+            UpdateArrowVisibility();
 
             if (Time.deltaTime > 0)
             {
                 MuzzleWorldVelocity = (WeaponMuzzle.position - m_LastMuzzlePosition) / Time.deltaTime;
                 m_LastMuzzlePosition = WeaponMuzzle.position;
+            }
+        }
+
+        void UpdateArrowVisibility()
+        {
+            if (m_CurrentAmmo <= 0)
+            {
+                arrow.SetActive(false);
+            }
+            else
+            {
+                arrow.SetActive(true);
             }
         }
 
@@ -358,7 +378,7 @@ namespace Unity.FPS.Game
             switch (ShootType)
             {
                 case WeaponShootType.Manual:
-                    if (inputDown)
+                    if (inputDown && isReadyToShoot)
                     {
                         return TryShoot();
                     }

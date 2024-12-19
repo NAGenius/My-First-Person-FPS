@@ -112,7 +112,20 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1485033661919127732, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7146113497442105969}
+    - targetCorrespondingSourceObject: {fileID: 1485033661919127732, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110776619578244865}
   m_SourcePrefab: {fileID: 100100000, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
+--- !u!4 &98232309030167893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6632099731382310095, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
+  m_PrefabInstance: {fileID: 6725297366065492378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5318443768496249121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1485033661919127739, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
+  m_PrefabInstance: {fileID: 6725297366065492378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5318443768496249134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1485033661919127732, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
@@ -214,3 +227,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2110776619578244865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318443768496249134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de99b30e1e73fd14e98cc5371da25d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 0.01
+  Root: {fileID: 5318443768496249121}
+  Tip: {fileID: 98232309030167893}
+  MaxLifeTime: 5
+  ImpactVfx: {fileID: 7655095426451682942, guid: a7d68b1a502e02a49b8efb1b86a8c931, type: 3}
+  ImpactVfxLifetime: 5
+  ImpactVfxSpawnOffset: 0.1
+  ImpactSfxClip: {fileID: 0}
+  HittableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  Speed: 60
+  GravityDownAcceleration: 0
+  TrajectoryCorrectionDistance: 5
+  InheritWeaponVelocity: 0
+  Damage: 40
+  AreaOfDamage: {fileID: 0}
+  RadiusColor: {r: 0, g: 0.2, b: 0.2, a: 0.2}

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public AudioClip hitSound;
     public int scoreValue = 10;
+    public AudioClip hitSound;
 
     private AudioSource audioSource;
     private ScoreManager scoreManager;
@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
-    void OnTriggerEnter(Collider  other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Arrow"))
         {
